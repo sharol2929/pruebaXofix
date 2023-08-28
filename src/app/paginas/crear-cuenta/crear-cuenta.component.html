@@ -1,0 +1,110 @@
+<app-navbar></app-navbar><br>
+<div class="page-header section-height-100">
+    <div class="container ">
+        <div class="row">
+            <div class="col-xl-6 col-lg-6 col-md-8 d-flex flex-column mx-auto" id="form-cuenta">
+                <div class="card card-plain mt-8">
+                    <div class="card-header p-2  bg-secondary text-white">
+                        Resgistro de Inscripción
+                    </div>
+                    <div class="card-body">
+                        <form class="formulario" [formGroup]="crearform">
+                            <div class="mb-3">
+                                <label for="txt_user">Nombre de Usuario</label>
+                                <div class="input-group">
+                                    <input formControlName="usuario" type="text" class="form-control" id="txt_user" placeholder="Username" aria-describedby="inputGroupPrepend" required>
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="inputGroupPrepend">N</span>
+                                    </div>
+                                </div>
+                                <small class="text-danger">El  nombre de usuario es un valor requerido</small>
+                            </div>
+                                
+                            <div class="mb-3">
+                                <label for="txt_correo">Correo</label>
+                                <div class="input-group">
+                                    <input formControlName="correo" type="email" class="form-control" id="txt_correo" placeholder="Example@correo.com" aria-describedby="inputGroupPrepend" required>
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="inputGroupPrepend">C</span>
+                                    </div>
+                                </div>
+                                <small class="text-danger">El  correo es un valor requerido</small>
+                                <small class="text-danger">El correo debe seguir este formato example@correo.com</small>
+                            </div>
+                            <div class="mb-3">
+                                <label for="txt_contra">Contraseña</label>
+                                <div class="input-group">
+                                    <input formControlName="contraseña" type="password" class="form-control" id="txt_contra" placeholder="*******" aria-describedby="inputGroupPrepend" required>
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="inputGroupPrepend">C</span>
+                                    </div>
+                                </div>
+                                <small class="text-danger">La contraseña debe tener minimo 8 caractares</small>
+                            </div>
+                            <div class="mb-3">
+                                <label for="txt_contrave">Confirma tu contraseña</label>
+                                <div class="input-group">
+                                    <input formControlName="contraseña2" type="password" class="form-control" id="txt_contrave" placeholder="*******" aria-describedby="inputGroupPrepend" required>
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="inputGroupPrepend">C</span>
+                                    </div>
+                                </div>
+                                <small class="text-danger">Las contraseñas no coinciden</small>
+                            </div>
+                            
+                            <hr>
+                            Ahora por favor ingrese algunos datos personales 
+                            <hr>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label for="txt_nom">Nombre de pila</label>
+                                    <div class="input-group">
+                                        <input formControlName="nombre" type="text" class="form-control" id="txt_nom" placeholder="nombre" aria-describedby="inputGroupPrepend" required>
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text" id="inputGroupPrepend">C</span>
+                                        </div>
+                                    </div>
+                                    <small class="text-danger">El nombre es un campo requerido</small>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="txt_ape">Apellido</label>
+                                    <div class="input-group">
+                                        <input formControlName="apellido" type="text" class="form-control" id="txt_ape" placeholder="apellido" aria-describedby="inputGroupPrepend" required>
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text" id="inputGroupPrepend">C</span>
+                                        </div>
+                                    </div>
+                                    <small class="text-danger"> El apellido es un campo requerido</small>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label for="txt_nom">Género</label>
+                                    
+                                    <select name="slt_gen" id="slt_gen" class="form-control" formControlName="genero">
+                                        <option value="F">Femenino</option>
+                                        <option value="M">Masculino</option>
+                                        <option value="O">Otro</option>
+                                    </select>
+                                    
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="dt_feact">Fecha Activación</label>
+                                    <input formControlName="fecha" type="date" class="form-control" id="input" placeholder="Solicitar activación en" aria-describedby="inputGroupPrepend" required>
+                                    <small class="text-danger">La fecha es un campo requerido</small>
+                                </div>
+                            </div><br>
+                            <div class="row text-center" >
+                                <div class="col-md-6" >
+                                    <button type="submit" class="btn btn-success" id="input">crear</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><br>
+                
+                

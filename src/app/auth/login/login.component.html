@@ -1,0 +1,45 @@
+<p>{{loginerror}}</p>
+<app-navbar></app-navbar>
+<div class="page-header section-height-75">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-4 col-lg-5 col-md-6 d-flex flex-column mx-auto">
+                <div class="card card-plain mt-8">
+                    <div class="card-header p-3 mb-2 bg-secondary text-white">
+                        <h3 class="titulo-login">Bienvenidos</h3>
+                    </div>
+                    <div class="card-body">
+                        <form [formGroup]="loginform">
+                            <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Correo</label>
+                            <input type="email" formControlName="email" id="exampleInputEmail1" class="form-control" aria-describedby="emailHelp" placeholder="example@correo.com">
+                            <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger">
+
+                                <div *ngIf="email.errors?.['required']">
+                                    el correo es requqerido.
+                                </div>
+                                <div *ngIf="email.errors?.['email']">
+                                    Recuerde utilizar el formato de correo (example@correo.com)
+                                </div>
+                            </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+                                <input type="password" formControlName="password" id="exampleInputPassword1" class="form-control">
+                            </div>
+                            <div class="mb3">
+                                <a href="#">olvide mi contraseña</a>
+                            </div><br>
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                <label class="form-check-label" for="exampleCheck1">Recuerdame</label>
+                            </div><br>
+                            <button type="submit" class="btn btn-primary" (click)="login()">iniciar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
