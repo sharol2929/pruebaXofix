@@ -11,6 +11,8 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
 import { ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { CrearCuentaComponent } from './paginas/crear-cuenta/crear-cuenta.component';
+import { GestionContrasenasComponent } from './paginas/gestion-contrasenas/gestion-contrasenas.component';
+import { GestionAccesosComponent } from './paginas/gestion-accesos/gestion-accesos.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { CrearCuentaComponent } from './paginas/crear-cuenta/crear-cuenta.compon
     InicioComponent,
     LoginComponent,
     NavbarComponent,
-    CrearCuentaComponent
+    CrearCuentaComponent,
+    GestionContrasenasComponent,
+    GestionAccesosComponent
   ],
   imports: [
     BrowserModule,
