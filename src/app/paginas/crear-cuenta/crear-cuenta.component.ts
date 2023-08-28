@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-crear-cuenta',
@@ -8,7 +9,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 })
 export class CrearCuentaComponent {
 
-  constructor(private formBuild:FormBuilder){
+  constructor(private formBuild:FormBuilder, private router:Router){
   }
 
   inicioerror:string="";
@@ -22,7 +23,11 @@ export class CrearCuentaComponent {
     genero:['',[Validators.required]],
     fecha:['', Validators.required]
 
-  })
+  },{
+    Validators:this.contrasenasIguales('contraseña','contraseña2')
+  }
+  
+  )
   get nombreNoValido(){
     return this.crearform.get('usuario')?.invalid && this.crearform.get('usuario')?.touched;
   } 
@@ -45,7 +50,41 @@ export class CrearCuentaComponent {
     return this.crearform.get('genero')?.invalid && this.crearform.get('genero')?.touched;
   }
   
-  
+  crear(){
+    this.passnovalido;
+    if (this.crearform.invalid){
+      return Object.values(this.crearform.controls).forEach(controls=>{
+        controls.markAllAsTouched();
+      })
+    }else{
+      this.router.navigateByUrl('/iniciar-seccion');
+      this.crearform.reset();
+    }
+  }
+
+  passnovalido(){
+    const pass1 = this.crearform.get('contraseña')?.value;
+    const pass2 = this.crearform.get('contraseña2')?.value;
+
+    if(pass1 !== pass2){
+      return true;
+    }else{
+      return false;
+    }
+  }
+
+  contrasenasIguales(pass1:string, pass2:string){
+    return (formgrupo:FormGroup)=>{
+      const pass1Control = formgrupo.get(pass1);
+      const pass2Control = formgrupo.get(pass2);
+
+      if(pass1Control?.value === pass2Control?.value){
+        pass2Control?.setErrors(null);
+      }else{
+        pass2Control?.setErrors({noigual:true})
+      }
+    }
+  }
   
   
 }

@@ -11,16 +11,17 @@
                   loading="lazy"
               />
           </a>
+          <small *ngIf="userloginOn" class=" nav-link text-black">Bienvenid@ {{userdata?.name}}</small>    
           <ul class="navbar-nav mb-2 mb-lg-0">
             <div class="row" id="cuenta" >
               <div class="col"><p *ngIf="!userloginOn" >No tienes cuenta?</p></div>
               <div class="col"><button *ngIf="!userloginOn" class="btn btn-success text-white" routerLink="/crear-cuenta">Crea tu cuenta ahora</button></div>
             </div>
-            <div class="row" id="cuenta" >
+            
               <a *ngIf="userloginOn" class="nav-link" aria-current="page" routerLink="/inicio">inicio</a>
-              <a *ngIf="userloginOn" class="nav-link" routerLink="/iniciar-seccion">Gestionar Contraseña</a>
-              <p *ngIf="userloginOn">Bienvenido {{userdata?.name}}</p>
-            </div>         
+              <a *ngIf="userloginOn" class="nav-link" routerLink="/gestion-contrasenas">Gestionar Contraseña</a>
+              <a *ngIf="userloginOn" class="nav-link" routerLink="/gestion-acceso">Gestionar Acceso</a>
+                 
            
           </ul>                    
       </div>

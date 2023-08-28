@@ -8,7 +8,7 @@
                         Resgistro de Inscripción
                     </div>
                     <div class="card-body">
-                        <form class="formulario" [formGroup]="crearform">
+                        <form class="formulario" [formGroup]="crearform" (ngSubmit)="crear()">
                             <div class="mb-3">
                                 <label for="txt_user">Nombre de Usuario</label>
                                 <div class="input-group">
