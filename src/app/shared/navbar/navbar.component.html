@@ -17,8 +17,6 @@
               <div class="col"><p *ngIf="!userloginOn" >No tienes cuenta?</p></div>
               <div class="col"><button *ngIf="!userloginOn" class="btn btn-success text-white" routerLink="/crear-cuenta">Crea tu cuenta ahora</button></div>
             </div>
-            
-              <a *ngIf="userloginOn" class="nav-link" aria-current="page" routerLink="/inicio">inicio</a>
               <a *ngIf="userloginOn" class="nav-link" routerLink="/gestion-contrasenas">Gestionar Contraseña</a>
               <a *ngIf="userloginOn" class="nav-link" routerLink="/gestion-acceso">Gestionar Acceso</a>
                  
